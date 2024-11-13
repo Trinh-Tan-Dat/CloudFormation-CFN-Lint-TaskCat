@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - echo "Installing cfn-lint..."
+      - pip install cfn-lint
+  build:
+    commands:
+      - echo "Linting CloudFormation template with cfn-lint..."
+      - cfn-lint vpc.yaml
+
+reports:
+  lint-report:
+    files:
+      - "**/*.yaml"
+    file-format: YAML
+    base-directory: ./
