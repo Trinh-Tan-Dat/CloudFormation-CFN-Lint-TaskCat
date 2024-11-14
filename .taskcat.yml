@@ -1,0 +1,11 @@
+project:
+  name: "vpc-test"
+  regions:
+    - "us-east-1"
+
+tests:
+  vpc-test:
+    template: vpc.yaml
+    regions:
+      - "us-east-1"
+    parameters: {}
